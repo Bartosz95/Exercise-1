@@ -2,17 +2,20 @@
 //
 
 #include "stdafx.h"
-#include "iostream"
+#include <iostream>
 #include <tuple>
 #include "Headers\matrix.h"
 
 using namespace std;
+
 int main()
 {
-	matrix<int> x(2,1);
-	//auto size = x.size();
-	//cout << get<0>(size)<<endl;
-	//cout << get<1>(size)<<endl;
+	matrix<int> a(10,5);
+	matrix<int> b(3, 4);
+
+	a + b;
+	matrix<int> c;
+	cout << c;
  
 	getchar();
     return 0;

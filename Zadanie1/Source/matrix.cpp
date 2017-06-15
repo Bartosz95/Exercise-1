@@ -1,13 +1,20 @@
-#include "../Headers/matrix.h"
+#include "stdafx.h"
 #include <iostream>
-//template <typename T>
-Matrix::Matrix(int in_x, int in_y) {
-	this->x = in_x;
-	this->y = in_y;
-	std::cout << "x";
-}
-/*
+#include "..\Headers\matrix.h"
+
 template <typename T>
-std::tuple<int, int > Matrix<T>::size() {
-	return std::make_tuple(x, y);
-}*/
+matrix<T>::matrix()
+{
+	std::cout << "Helloworld";
+}
+template <typename T>
+matrix<T>::matrix(int in_x, int in_y)
+{
+	std::cout << in_x << "Helloworld"<< in_y;
+}
+template <typename T>
+matrix<T>::~matrix()
+{
+}
+template class matrix<int>;
+template class matrix<double>;

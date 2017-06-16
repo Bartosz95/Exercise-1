@@ -3,6 +3,8 @@
 #include <tuple>
 #include <cstdlib>
 #include <sstream>
+#include <exception>
+#include <string>
 #include "..\Headers\matrix.h"
 
 using namespace std;
@@ -19,6 +21,14 @@ matrix<T>::matrix()
 template <typename T>
 matrix<T>::matrix(int in_x, int in_y)
 {
+	if ((in_x > this->x) && (in_x < 0)) {
+		string ex = "wrong dimensions of x";
+		throw ex;
+	}
+	if ((in_y > this->y) && (in_y < 0)) {
+		string ex = "wrong dimensions of y";
+		throw ex;
+	}
 	this->x = in_x;
 	this->y = in_y;
 	M = new T *[x];
@@ -50,13 +60,22 @@ int matrix<T>::get_y() {
 }
 template <typename T>
 void  matrix<T>::change(int in_x, int in_y, T value) {
+	if ((in_x > this->x) && (in_x < 0)) {
+		string ex = "wrong dimensions of x";
+		throw ex;
+	}
+	if ((in_y > this->y) && (in_y < 0)) {
+		string ex = "wrong dimensions of y";
+		throw ex;
+	}
 	this->M[in_x][in_y] = value;
 }
 template <typename T>
 matrix<T> & matrix<T>::operator= (const matrix<T> &obj)
 {
 	if ((this->x != obj.x) || (this->y != obj.y)) {
-		cout << "Wrong";
+		string ex = "wrong dimensions of matrix";
+		throw ex;
 	}
 	for (int i = 0; i < x; i++) {
 		for (int j = 0; j < y; j++)
@@ -68,7 +87,8 @@ template <typename T>
 matrix<T> matrix<T>::operator+ (const matrix<T> & obj)
 {
 	if((this->x != obj.x)||(this->y != obj.y)) {
-		cout << "Wrong";
+		string ex = "wrong dimensions of matrix to addition";
+		throw ex;
 	}
 	matrix<T> ret(this->x, this->y);
 	for (int i = 0; i < x; i++) {
@@ -81,7 +101,8 @@ template <typename T>
 matrix<T> matrix<T>::operator- (const matrix<T> & obj)
 {
 	if ((this->x != obj.x) || (this->y != obj.y)) {
-		cout << "Wrong";
+		string ex = "wrong dimensions of matrix to subtraction";
+		throw ex;
 	}
 	matrix<T> ret(this->x, this->y);
 	for (int i = 0; i < x; i++) {
@@ -93,10 +114,11 @@ matrix<T> matrix<T>::operator- (const matrix<T> & obj)
 template <typename T>
 matrix<T> matrix<T>::operator* (const matrix<T> & obj)
 {
-	if (this->x != obj.y) {
-		cout << "Wrong";
+	if (this->y != obj.x) {
+		string ex = "wrong dimensions of matrix to multiplication";
+		throw ex;
 	}
-	matrix<T> ret(this->x, this->x);
+	matrix<T> ret(this->x,obj.y);
 	T val;
 	for (int i = 0; i < this->x; i++) {
 		for (int j = 0; j < obj.y; j++) {

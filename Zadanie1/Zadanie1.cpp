@@ -10,13 +10,15 @@ using namespace std;
 
 int main()
 {
-	matrix<int> a(10,5);
-	matrix<int> b(3, 4);
+	matrix<int> a(3,4);
+	matrix<int> b(4,3);
+	cout << b<<endl;
+	cout << a<<endl;
+	//a.change(2, 3, 100);
+	cout << a * b;
+	//matrix<int>  a * b;
 
-	a + b;
-	matrix<int> c;
-	cout << c;
- 
+	//cout << c;
 	getchar();
     return 0;
 }

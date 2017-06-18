@@ -19,6 +19,17 @@ matrix<T>::matrix()
 	M[0][0] = 1;
 }
 template <typename T>
+matrix<T>::matrix(matrix<T> &obj) {
+	this->x = obj.get_x();
+	this->y = obj.get_y();
+	this->M = new T *[this->x];
+	for (int i = 0; i < this->x; i++) {
+		this->M[i] = new T[y];
+		for (int j = 0; j <this->y; j++)
+			this->M[i][j] = obj.get_value(i,j);
+	}
+}
+template <typename T>
 matrix<T>::matrix(int in_x, int in_y)
 {
 	if ((in_x > this->x) && (in_x < 0)) {
@@ -31,20 +42,20 @@ matrix<T>::matrix(int in_x, int in_y)
 	}
 	this->x = in_x;
 	this->y = in_y;
-	M = new T *[x];
-	for (int i = 0; i < x; i++) {
-		M[i] = new T [y];
-		for (int j = 0; j < y; j++)
-			 M[i][j] = 2*i+j;
+	this->M = new T *[this->x];
+	for (int i = 0; i < this->x; i++) {
+		this->M[i] = new T [this->y];
+		for (int j = 0; j < this->y; j++)
+			this->M[i][j] = 2*i+j;
 	}
 }
 template <typename T>
 matrix<T>::~matrix()
 {
 	for (int i = 0; i < x; i++) {
-		//delete[] this->M[i];
+		delete[] this->M[i];
 	}
-	//delete[] this->M;
+	delete[] this->M;
 }
 template <typename T>
 tuple<int, int > matrix<T>::size() {
@@ -57,6 +68,10 @@ const int matrix<T>::get_x() {
 template <typename T>
 int matrix<T>::get_y() {
 	return this->y;
+}
+template <typename T>
+T matrix<T>::get_value(int x, int y) {
+	return this->M[x][y];
 }
 template <typename T>
 void  matrix<T>::change(int in_x, int in_y, T value) {

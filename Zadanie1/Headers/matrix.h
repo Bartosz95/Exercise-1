@@ -10,12 +10,14 @@ private:
 public:
 	//KONSTRUKTORY
 	matrix();
+	matrix(matrix<T> &);
 	matrix(int in_x, int in_y);
 	~matrix();
 
 	tuple<int, int> size();
 	const int get_x();
 	int get_y();
+	T get_value(int x, int y);
 	void change(int in_x, int in_y,T value);
 
 	friend ostream& operator<< (ostream& out, const matrix<T> &obj)

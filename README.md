@@ -1,0 +1,3 @@
+# README #
+
+Exercises for study

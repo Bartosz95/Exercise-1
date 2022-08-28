@@ -1,0 +1,124 @@
+object Form1: TForm1
+  Left = 1042
+  Top = 178
+  Width = 326
+  Height = 423
+  BorderIcons = [biSystemMenu, biMinimize]
+  Caption = 'K'#243#322'ko i Krzy'#380'yk'
+  Color = clWhite
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  OldCreateOrder = False
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object pole1: TImage
+    Left = 8
+    Top = 8
+    Width = 100
+    Height = 100
+    Cursor = crHandPoint
+    OnClick = pole1Click
+  end
+  object pole2: TImage
+    Left = 104
+    Top = 8
+    Width = 100
+    Height = 100
+    Cursor = crHandPoint
+    OnClick = pole2Click
+  end
+  object pole3: TImage
+    Left = 200
+    Top = 8
+    Width = 100
+    Height = 100
+    Cursor = crHandPoint
+    OnClick = pole3Click
+  end
+  object pole4: TImage
+    Left = 8
+    Top = 104
+    Width = 100
+    Height = 100
+    Cursor = crHandPoint
+    OnClick = pole4Click
+  end
+  object pole5: TImage
+    Left = 104
+    Top = 104
+    Width = 100
+    Height = 100
+    Cursor = crHandPoint
+    OnClick = pole5Click
+  end
+  object pole6: TImage
+    Left = 200
+    Top = 104
+    Width = 100
+    Height = 100
+    Cursor = crHandPoint
+    OnClick = pole6Click
+  end
+  object pole7: TImage
+    Left = 8
+    Top = 200
+    Width = 100
+    Height = 100
+    Cursor = crHandPoint
+    OnClick = pole7Click
+  end
+  object pole8: TImage
+    Left = 104
+    Top = 200
+    Width = 100
+    Height = 100
+    Cursor = crHandPoint
+    OnClick = pole8Click
+  end
+  object pole9: TImage
+    Left = 200
+    Top = 200
+    Width = 100
+    Height = 100
+    Cursor = crHandPoint
+    OnClick = pole9Click
+  end
+  object Label1: TLabel
+    Left = 120
+    Top = 310
+    Width = 101
+    Height = 28
+    Caption = '- GRACZ'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -24
+    Font.Name = 'Perpetua Titling MT'
+    Font.Style = []
+    ParentFont = False
+  end
+  object tura: TImage
+    Left = 80
+    Top = 310
+    Width = 30
+    Height = 30
+  end
+  object BitBtn1: TBitBtn
+    Left = 104
+    Top = 344
+    Width = 97
+    Height = 33
+    Caption = 'RESTART'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Perpetua Titling MT'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 0
+    OnClick = FormCreate
+  end
+end

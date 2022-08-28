@@ -1,3 +1,3 @@
-# C++ sandbox
+# C++ playground
 ## Abstract
 This applications were created for studies project. It might helps get familiar with C++
